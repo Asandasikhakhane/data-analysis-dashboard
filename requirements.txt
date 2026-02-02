@@ -1,0 +1,14 @@
+# Core dashboard framework
+streamlit==1.31.0
+
+# Data handling
+pandas==2.2.0
+numpy==1.26.4
+
+# Visualization
+plotly==5.18.0
+matplotlib==3.8.2
+seaborn==0.13.2
+
+# Optional: for interactive widgets and performance
+altair==5.2.0
