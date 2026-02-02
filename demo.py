@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+
 
 st.title("📊 Interactive Data Dashboard with Downloads")
 
@@ -64,30 +64,30 @@ if uploaded_file is not None:
     )
 
     # --- Plot Controls in Sidebar ---
-    st.sidebar.header("📈 Plot Controls")
-    x_column = st.sidebar.selectbox("Select x-axis column", columns)
-    y_column = st.sidebar.selectbox("Select y-axis column", columns)
-    chart_type = st.sidebar.selectbox(
-        "Select chart type",
-        ["Line", "Bar", "Scatter", "Histogram", "Box", "Pie"]
-    )
+  #  st.sidebar.header("📈 Plot Controls")
+   # x_column = st.sidebar.selectbox("Select x-axis column", columns)
+   # y_column = st.sidebar.selectbox("Select y-axis column", columns)
+   # chart_type = st.sidebar.selectbox(
+       # "Select chart type",
+       # ["Line", "Bar", "Scatter", "Histogram", "Box", "Pie"]
+    #)
 
-    if st.sidebar.button("Generate Plot"):
-        try:
-            if chart_type == "Line":
-                fig = px.line(filtered_df, x=x_column, y=y_column, title="Line Chart")
-            elif chart_type == "Bar":
-                fig = px.bar(filtered_df, x=x_column, y=y_column, title="Bar Chart")
-            elif chart_type == "Scatter":
-                fig = px.scatter(filtered_df, x=x_column, y=y_column, title="Scatter Plot")
-            elif chart_type == "Histogram":
-                fig = px.histogram(filtered_df, x=y_column, title="Histogram")
-            elif chart_type == "Box":
-                fig = px.box(filtered_df, y=y_column, title="Box Plot")
-            elif chart_type == "Pie":
-                fig = px.pie(filtered_df, names=x_column, values=y_column, title="Pie Chart")
+    #if st.sidebar.button("Generate Plot"):
+        #try:
+            #if chart_type == "Line":
+              #  fig = px.line(filtered_df, x=x_column, y=y_column, title="Line Chart")
+            #elif chart_type == "Bar":
+               # fig = px.bar(filtered_df, x=x_column, y=y_column, title="Bar Chart")
+            #elif chart_type == "Scatter":
+                #fig = px.scatter(filtered_df, x=x_column, y=y_column, title="Scatter Plot")
+           # elif chart_type == "Histogram":
+               # fig = px.histogram(filtered_df, x=y_column, title="Histogram")
+            #elif chart_type == "Box":
+                #fig = px.box(filtered_df, y=y_column, title="Box Plot")
+            #elif chart_type == "Pie":
+                #fig = px.pie(filtered_df, names=x_column, values=y_column, title="Pie Chart")
 
-            st.plotly_chart(fig, use_container_width=True)
+            #st.plotly_chart(fig, use_container_width=True)
 
             # --- Download Plot Options ---
             # Save as HTML (interactive)
@@ -111,4 +111,5 @@ if uploaded_file is not None:
         except Exception as e:
             st.error(f"Could not generate plot: {e}")
 else:
+
     st.write("Waiting on file upload....")
