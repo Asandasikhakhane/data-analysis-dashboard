@@ -91,25 +91,26 @@ if uploaded_file is not None:
 
             # --- Download Plot Options ---
             # Save as HTML (interactive)
-            html_bytes = fig.to_html().encode("utf-8")
-            st.download_button(
-                label="⬇️ Download Plot as HTML (interactive)",
-                data=html_bytes,
-                file_name="plot.html",
-                mime="text/html"
-            )
+            #html_bytes = fig.to_html().encode("utf-8")
+           # st.download_button(
+                #label="⬇️ Download Plot as HTML (interactive)",
+                #data=html_bytes,
+                #file_name="plot.html",
+                #mime="text/html"
+            #)
 
             # Save as PNG (static image)
-            png_bytes = fig.to_image(format="png")
-            st.download_button(
-                label="⬇️ Download Plot as PNG (image)",
-                data=png_bytes,
-                file_name="plot.png",
-                mime="image/png"
-            )
+            #png_bytes = fig.to_image(format="png")
+            #st.download_button(
+                #label="⬇️ Download Plot as PNG (image)",
+               # data=png_bytes,
+               # file_name="plot.png",
+               # mime="image/png"
+           # )
 
-        except Exception as e:
-            st.error(f"Could not generate plot: {e}")
+        #except Exception as e:
+           # st.error(f"Could not generate plot: {e}")
 else:
 
     st.write("Waiting on file upload....")
+
